@@ -1,5 +1,6 @@
 import streamlit as st
 import pickle
+from sklearn import pickle
 
 def prediction(lst):
     filename = 'website/model/predictor1.pickle'
