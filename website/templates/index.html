@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            Salary Predictor
+        </div>
+        
+
+        <form actions="/" method="POST">
+            <div class="form">
+                <div class="inputfield">
+                    <label for="Age">Age</label>
+                    <input type="text" class="input" name="Age" required>
+                </div>
+                <div class="inputfield">
+                    <label for="Years of Experience">Years of Experience</label>
+                    <input type="text" class="input" name="Years of Experience" required>
+                </div>
+                
+                <div class="inputfield">
+                    <label for="Education Level">Education Level</label>
+                    <div class = "custom_select">
+                        <select name="Education Level" id="Education Level">
+                            <option value="" selected hidden>Select</option>
+                            <option value="Bachelor's">Bachelor's</option>
+                            <option value="Master's">Master's</option>
+                            <option value="PhD">PhD</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label for="job_name">job_name</label>
+                    <div class = "custom_select">
+                        <select name="job_name" id="job_name">
+                            <option value="" selected hidden>Select</option>
+                            <option value="Analyst">Analyst</option>
+                            <option value="Business Analyst">Business Analyst</option>
+                            <option value="Business Development">Business Development</option>
+                            <option value="Data Scientist">Data Scientist</option>
+                            <option value="Director of Marketing">Director of Marketing</option>
+                            <option value="Director of Operations">Director of Operations</option>
+                            <option value="Finacial Analyst">Financial Analyst</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Marketing Analyst">Marketing Analyst</option>
+                            <option value="Marketing Coordinator">Marketing Coordinator</option>
+                            <option value="Marketing Manager">Marketing Manager</option>
+                            <option value="Marketing Specialist">Marketing Specialist</option>
+                            <option value="Operations Analyst">Operations Analyst</option>
+                            <option value="Operations Manager">Operations Manager</option>
+                            <option value="Product Manager">Product Manager</option>
+                            <option value="Project Manager">Project Manager</option>
+                            <option value="Software Engineer">Software Engineer</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="inputfield">
+                    <input type="submit" class="btn" value="Predict Price">
+                </div>
+            </div>    
+        </form>
+        <div class="result">
+            {% if pred !=0 %}
+            <p>
+               Estimated price: Rs {{pred}}
+            </p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
